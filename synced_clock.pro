@@ -23,19 +23,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-        standardclock.cpp \
+SOURCES += \
     clock.cpp \
     glclock.cpp \
     glclockwindow.cpp \
+    main.cpp \
+    standardclock.cpp \
     syncedtimer.cpp
 
-HEADERS  += standardclock.h \
+HEADERS += \
     clock.h \
     glclock.h \
     glclockwindow.h \
+    standardclock.h \
     syncedtimer.h
 
-FORMS    += standardclock.ui
+FORMS += standardclock.ui
 
 DISTFILES +=

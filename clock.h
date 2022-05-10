@@ -1,8 +1,9 @@
 #ifndef CLOCK_H
 #define CLOCK_H
 
-#include <QTime>
+#include <QElapsedTimer>
 #include <QObject>
+#include <QTime>
 
 class Clock : public QObject
 {
@@ -21,10 +22,13 @@ protected:
 public:
     quint64 getCounter() const
     { return this->counter; }
+
     const QTime &getNow() const
     { return this->now; }
+
     const QTime &getPrevious() const
     { return this->previous; }
+
     qreal getRate() const
     { return this->rate.current; }
 
@@ -33,10 +37,11 @@ private:
     QTime now;
     QTime previous;
 
+    // rate computation data
     struct {
-        quint64 counter;
+        quint64 last_counter;
+        QElapsedTimer last_date;
         qreal current;
-        QTime date;
     } rate;
 };
 
